@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Navbar from './composants/Navbar'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import  Acceuil  from './pages/Acceuil'
 import  Activation  from './pages/Activation'
 import  Remboursement  from './pages/Remboursement'
@@ -10,24 +10,14 @@ import Footers from './composants/Footers'
 
 import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <section>
-    
-    
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Acceuil />} />
-        <Route path="/Activation" element={<Activation />} />
-        <Route path="/Remboursement" element={<Remboursement />} />
-      </Routes>
-      
-    
-    
-      <Footers/>
-    
-    </section> 
+    <div style={{
+      color: "white",
+      fontSize: "30px",
+      padding: "50px"
+    }}>
+      APP OK 🚀
+    </div>
   )
 }
-
-export default App

@@ -5,7 +5,7 @@ import bg from './assets/arriereplan.jpeg'
 export default function App() {
   return (
       <section style={{
-          backgroundImage: url(${bg}),
+          backgroundImage: `url(${bg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
              minHeight: "100vh"

@@ -1,22 +1,33 @@
+import { useState } from 'react'
 import Navbar from './composants/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import  Acceuil  from './pages/Acceuil'
+import  Activation  from './pages/Activation'
+import  Remboursement  from './pages/Remboursement'
 import Footers from './composants/Footers'
-import bg from './assets/arriereplan.jpeg'
+
+
+
 import './App.css'
 
-export default function App() {
+function App() {
   return (
-      <section style={{
-          backgroundImage: `url(${bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-             minHeight: "100vh"
-            }}>
-      <Navbar />
-      <div style={{color:"white", padding:"20px"}}>
-        MIDDLE TEST 🚀
-      </div>
-      <Footers />
-    </section>
+    <section>
     
+    
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Acceuil />} />
+        <Route path="/Activation" element={<Activation />} />
+        <Route path="/Remboursement" element={<Remboursement />} />
+      </Routes>
+      
+    
+    
+      <Footers/>
+    
+    </section> 
   )
 }
+
+export default App

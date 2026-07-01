@@ -13,16 +13,16 @@ import './App.css'
 function App() {
   return (
     <section>
-    <BrowserRouter>
-    <section>
+    
+    
       <Navbar />
       <Routes>
         <Route path="/" element={<Acceuil />} />
         <Route path="/Activation" element={<Activation />} />
         <Route path="/Remboursement" element={<Remboursement />} />
       </Routes>
-      </section>
-    </BrowserRouter>
+      
+    
     
       <Footers/>
     

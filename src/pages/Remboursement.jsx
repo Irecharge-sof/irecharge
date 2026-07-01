@@ -25,12 +25,12 @@ function Remboursement() {
 
         try{
             await axios.post(
-                "http://localhost:5000/envoyer",
-                {
-                    ...formData,
-                    formulaire: "Remboursement"
-                }
-            );
+            `${import.meta.env.VITE_API_URL}/envoyer`,
+        {
+            ...formData,
+            formulaire: "Remboursement"
+       }
+    );
 
             alert("Informations envoyées");
         }catch(error){

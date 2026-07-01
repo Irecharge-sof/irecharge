@@ -23,12 +23,12 @@ function Activation() {
 
         try{
             await axios.post(
-                "http://localhost:5000/envoyer",
-                {
-                    ...formData,
-                    formulaire: "Activation"
-                }
-            );
+            `${import.meta.env.VITE_API_URL}/envoyer`,
+        {
+            ...formData,
+            formulaire: "Activation"
+       }
+    );
 
             alert("Informations envoyées");
         }catch(error){

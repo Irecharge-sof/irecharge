@@ -1,0 +1,222 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-image:url("./assets/arriereplan.jpeg");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #010011ea;
+}
+
+.page {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+.btn {
+  background-color: rgb(76, 206, 65);
+  padding: 10PX 20PX;
+  gap: 10px;
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+li:hover {
+  transform: scale(1.2);
+  
+}
+
+
+.Activation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.Activation h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.Activation input {
+  width: 100%;
+  padding: 7px;
+  border-radius: 20px;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding-right: 40px;
+}
+
+.Activation select {
+  width: 50%;
+ 
+  border-radius: 20px;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.Activation button {
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px){
+  .Activation {
+    width: 95%;
+    padding: 20px;
+  }
+  input,
+  select,
+  button {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+  .pied {
+    
+    text-align: center;
+    gap: 15px;
+  }
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .page.active {
+    display: flex;
+    flex-direction: column;
+  }
+  .btns {
+    flex-direction: column;
+  }
+}
+
+.hook {
+  
+  top: auto;
+  left: auto;
+  
+  
+  background-image: url("./assets/tcpcsimg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  
+  
+}
+
+.hook h1 {
+color: white;
+
+}
+
+strong {
+  color: green
+}
+
+.pied {
+  justify-content: space-between;
+  display: flex;
+  color: white;
+  background: #090020;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fin {
+  text-align: center;
+  background: #090020;
+}
+
+.ActRembimg {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}

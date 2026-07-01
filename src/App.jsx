@@ -1,0 +1,33 @@
+import { useState } from 'react'
+import Navbar from './composants/Navbar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import  Acceuil  from './pages/Acceuil'
+import  Activation  from './pages/Activation'
+import  Remboursement  from './pages/Remboursement'
+import Footers from './composants/Footers'
+
+
+
+import './App.css'
+
+function App() {
+  return (
+    <section>
+    <BrowserRouter>
+    <section>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Acceuil />} />
+        <Route path="/Activation" element={<Activation />} />
+        <Route path="/Remboursement" element={<Remboursement />} />
+      </Routes>
+      </section>
+    </BrowserRouter>
+    
+      <Footers/>
+    
+    </section> 
+  )
+}
+
+export default App

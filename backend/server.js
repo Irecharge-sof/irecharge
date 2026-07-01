@@ -1,5 +1,4 @@
 const express = require("express");
-const express = require("express");
 const cors = require("cors");
 
 const nodemailer = require("nodemailer");
@@ -25,8 +24,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
   tls: {
-    rejectUnauthorized:false
-  }
+    rejectUnauthorized: false,
+  },
 });
 
 app.post("/envoyer", async (req, res) => {

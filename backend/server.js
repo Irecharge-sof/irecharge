@@ -1,9 +1,8 @@
-const dns = require("dns");
-dns.setDefaultResultOrder("ipv4first");
+
 const express = require("express");
 const cors = require("cors");
 
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 require("dotenv").config();
 
@@ -17,25 +16,13 @@ app.listen(process.env.PORT || 5000, () => {
   console.log("serveur démarré");
 });
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-  family: 4,
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post("/envoyer", async (req, res) => {
   const data = req.body;
   try {
-    await transporter.sendMail({
-      from: `"Irecharge" <${process.env.EMAIL_USER}>`,
+    await resend.emails.send({
+      from: "Irecharge <onboarding@resend.dev>",
       replyTo: data.email,
       to: "sofiamarley29@gmail.com",
       subject: `Nouvelle demande : ${data.formulaire}`,

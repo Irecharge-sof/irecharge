@@ -7,6 +7,7 @@ function Activation() {
     prenom: "",
     email: "",
     typeRecharge: "TRANSCASH",
+    montant: "",
     dateAchat: "",
     codeRecharge: "",
     cacherCode: "NON",
@@ -33,6 +34,11 @@ function Activation() {
       newErrors.email = "L'email est requis.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Format d'email invalide.";
+    }
+    if (!formData.montant.trim()) {
+      newErrors.montant = "Le montant est requis.";
+    } else if (isNaN(formData.montant) || Number(formData.montant) <= 0) {
+      newErrors.montant = "Montant invalide.";
     }
     if (!formData.dateAchat)
       newErrors.dateAchat = "La date d'achat est requise.";
@@ -63,6 +69,7 @@ function Activation() {
         prenom: "",
         email: "",
         typeRecharge: "TRANSCASH",
+        montant: "",
         dateAchat: "",
         codeRecharge: "",
         cacherCode: "NON",
@@ -137,6 +144,18 @@ function Activation() {
             <option value="PCS">PCS</option>
             <option value="NEOSURF">NEOSURF</option>
           </select>
+          
+          <h4>MONTANT (€)</h4>
+          <input
+            type="number"
+            name="montant"
+            placeholder="montant"
+            value={formData.montant}
+            onChange={handleChange}
+          />
+          {errors.montant && 
+            <span className="field-error">{errors.montant}</span>
+          }
 
           <h4>DATE D'ACHAT</h4>
           <input
